@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAREEJ - Smart Garage Service</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background: #ff6600;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .hero {
+            color: white;
+            background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #ff6600;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e65c00;
+        }
+
+        .services .card {
+            display: inline-block;
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f4f4f4;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Hide sections */
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>GAREEJ</h1>
+    <p>Your Smart Garage Booking Platform</p>
+</header>
+
+<nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('services')">Services</a>
+    <a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page active hero">
+    <h2>Find the Best Garage Near You</h2>
+    <p>Book services, compare prices, and track repairs easily.</p>
+    <button onclick="bookNow()">Book Now</button>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="page services">
+    <h2>Our Services</h2>
+
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/car-service.png">
+        <h3>Car Service</h3>
+        <p>Complete car servicing at best price.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/motorcycle.png">
+        <h3>Bike Repair</h3>
+        <p>Quick and affordable bike repair.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/road.png">
+        <h3>Emergency Help</h3>
+        <p>24/7 roadside assistance.</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+    <h2>Contact Us</h2>
+
+    <div class="contact-form">
+        <input type="text" placeholder="Your Name" id="name">
+        <input type="email" placeholder="Your Email" id="email">
+        <textarea rows="4" placeholder="Your Message" id="message"></textarea>
+        <button onclick="sendMessage()">Send Message</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 GAREEJ | All Rights Reserved</p>
+</footer>
+
+<script>
+    function bookNow() {
+        alert("Booking feature coming soon!");
+    }
+
+    function showPage(pageId) {
+        let pages = document.querySelectorAll(".page");
+        pages.forEach(page => page.classList.remove("active"));
+
+        document.getElementById(pageId).classList.add("active");
+    }
+
+    function sendMessage() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        if(name === "" || email === "" || message === "") {
+            alert("Please fill all fields!");
+        } else {
+            alert("Message sent successfully!");
+        }
+    }
+</script>
+
+</body>
+</html>
